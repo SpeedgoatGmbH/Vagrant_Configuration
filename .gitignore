@@ -1,0 +1,10 @@
+#We don't want to version any of the installer files.
+R2018b/
+Xilinx_Vivado_SDK_2017.4_1216_1.tar.gz
+petalinux_installation_log
+sdcard/
+Xilinx_Vivado_SDx_Update_2017.4.1_0131_1/
+petalinux-v2017.4-final-installer.run
+Xilinx_Vivado_SDK_2017.4_1216_1/
+Xilinx_Vivado_SDx_Update_2017.4.1_0131_1.tar.gz
+
