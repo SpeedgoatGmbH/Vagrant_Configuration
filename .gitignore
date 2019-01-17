@@ -1,4 +1,5 @@
 #We don't want to version any of the installer files.
+.Trash-1000/
 R2018b/
 Xilinx_Vivado_SDK_2017.4_1216_1.tar.gz
 petalinux_installation_log

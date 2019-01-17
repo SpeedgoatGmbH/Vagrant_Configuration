@@ -37,6 +37,7 @@ $set_environment_variables = <<SCRIPT
   tee "/etc/profile.d/myvars.sh" > "/dev/null" <<EOF
   # Vivado Environment Variables
    export XILINXD_LICENSE_FILE=2100@michelangelo
+   export EBE_RELEASE=master
    export SVN_USER=$1
    export SVN_PASS=$2
    export GIT_USER=$3
@@ -210,7 +211,7 @@ Vagrant.configure("2") do |config|
     vb.customize "post-boot",["controlvm", :id, "vrde", "on"]
     vb.customize ["modifyvm", :id, "--vrdeport", $RDP_PORT] # change here to a free port
     #Give the VM more memory and cpus
-    vb.customize ["modifyvm", :id, "--memory", 8192]
+    vb.customize ["modifyvm", :id, "--memory", 12288]
     vb.customize ["modifyvm", :id, "--cpus", 8]
     config.vm.post_up_message = "The VM is ready!"
   end 
