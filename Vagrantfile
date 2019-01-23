@@ -132,6 +132,14 @@ $update_svn = <<-SCRIPT
   svn update FPGA/projects --non-interactive --trust-server-cert --username=$SVN_USER --password=$SVN_PASS
   cd ..
 SCRIPT
+$update_git = <<-SCRIPT
+  cd git/buildroot
+  git pull
+  cd ..
+  cd bsp-xilinx
+  git pull
+  cd /home
+SCRIPT
 
 $set_up_versioning = <<-SCRIPT
   sudo bash -c 'echo "192.168.21.1    enterprise.liebefeld.local" >> /etc/hosts'
@@ -233,4 +241,5 @@ Vagrant.configure("2") do |config|
   #SVN should not be checked out with sudo rights.
   config.vm.provision "shell", inline: $set_up_versioning, privileged: false
   config.vm.provision "shell", inline: $update_svn, run: "always"
+  config.vm.provision "shell", inline: $update_git, run: "always"
 end
